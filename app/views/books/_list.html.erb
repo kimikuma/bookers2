@@ -1,0 +1,14 @@
+<h1>User info</h1>
+<%=user.get_profile_image(200,200) %>
+<table>
+  <tr>
+    <th>Name</th>
+    <td><%=user.name %></td>
+  </tr>
+  <tr>
+    <th>introduction</th>
+    <td><%=user.introduction %></td>
+  </tr>
+</table>
+
+<%=link_to "edit"  %>
