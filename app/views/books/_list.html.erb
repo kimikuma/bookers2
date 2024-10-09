@@ -1,5 +1,5 @@
 
-<div class="col-3">
+<div class="col-md-3">
 <h2 class="mt-3">User info</h2>
 <%=image_tag current_user.get_profile_image(150,150) %>
 <table class="table table-border-top">
@@ -24,6 +24,6 @@
 <%=f.text_field:title %>
 <h6 class="mb-3">Opinion</h6>
 <%=f.text_area:body,class: "mt-2" %>
-<p><%=f.submit "Create Book",class: "btn btn-success" %></p>
+<p><%=f.submit 'Create Book',class: "btn btn-success" %></p>
 <% end %>
 </div>

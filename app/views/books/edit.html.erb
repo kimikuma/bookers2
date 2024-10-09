@@ -14,8 +14,10 @@
 <%=f.text_field:title,class: "form-control mb-3" %>
 <h6>Opinion</h6>
 <%=f.text_area:body,class: "form-control" %>
-<%=f.submit "Updete Book",class: "btn btn-success mt-3"%>
+<%=f.submit 'Updete',class: "btn btn-success mt-2 mb-3" %>
 <% end %>
+<span class="border-right"><%=link_to 'Show',book_path(@book.id) %></span>
+<span class="ms-2"><%=link_to 'Back',books_path %></span>
 </div>
 </div>
 </div>

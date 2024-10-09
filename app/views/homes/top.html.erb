@@ -10,11 +10,11 @@
 <div class="row">
   <div class="col-4 mx-auto">
 <% if user_signed_in? %>
- <p><%=button_to "Log in",user_path(current_user.id),method: :get, class: 'text-white btn-primary btn-sm btn-block' %></p>
- <p><%=button_to "sign Up",user_path(current_user.id),method: :get, class: 'text-white btn-success btn-sm btn-block' %></p>
+ <p><%=button_to 'Log in',user_path(current_user.id),method: :get, class: 'text-white btn-primary btn-sm btn-block' %></p>
+ <p><%=button_to 'sign Up',user_path(current_user.id),method: :get, class: 'text-white btn-success btn-sm btn-block' %></p>
 <% else %>
- <p><%=button_to "Log in",new_user_session_path, class: 'text-white btn-primary btn-sm btn-block' %></p>
- <p><%=button_to "sign Up",new_user_registration_path, class: 'text-white btn-success btn-sm btn-block' %></p>
+ <p><%=button_to 'Log in',new_user_session_path, class: 'text-white btn-primary btn-sm btn-block' %></p>
+ <p><%=button_to 'Sign up',new_user_registration_path, class: 'text-white btn-success btn-sm btn-block' %></p>
 <% end %>
 </div>
 </div>
