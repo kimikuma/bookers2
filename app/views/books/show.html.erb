@@ -1,6 +1,9 @@
-<h1>User info</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+    <h2 class="mt-3">User info</h2>
 <%=image_tag @book.user.get_profile_image(200,200) %>
-<table>
+<table class="table table-border-top">
   <tr>
     <th>name</th>
     <td><%=@book.user.name %></td>
@@ -15,7 +18,7 @@
 <% end %>
 
 
-<h1>New book</h1>
+<h2 class="mt-4">New book</h2>
 <% if @bookn.errors.any? %>
 <h2><%=@bookn.errors.count %>error prohibited this obj from being saved:</h2>
 <ul><% @bookn.errors.full_messages.each do |message| %>
@@ -24,17 +27,17 @@
 </ul>
 <% end %>
 <%=form_with model:@bookn do |f|%>
-<h4>Title</h4>
+<h6>Title</h6>
 <%=f.text_field:title %>
-<h4>Body</h4>
+<h6 class="mt-2">Body</h6>
 <%=f.text_area:body %>
 <p><%=f.submit "Create Book" %></p>
 <% end %>
-
-
+</div>
+<div class="col-8">
 <h1>Book detail</h1>
 <table>
-  <td><%=image_tag @book.user.get_profile_image(200,200) %></td>
+  <td><%=image_tag @book.user.get_profile_image(150,150) %></td>
   <td><%=@book.title %></td>
   <td><%=@book.body %></td>
   <% if @book.user==current_user %>
@@ -46,3 +49,6 @@
     <% end %>
   </td>
 </table>
+</div>
+</div>
+</div>
