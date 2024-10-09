@@ -1,17 +1,19 @@
 <h1>User info</h1>
-<%=image_tag current_user.get_profile_image(200,200) %>
+<%=image_tag user.get_profile_image(200,200) %>
 <table>
   <tr>
-    <th>Name</th>
-    <td><%=current_user.name %></td>
+    <th>name</th>
+    <td><%=user.name %></td>
   </tr>
   <tr>
-    <th>introduction</th>
-    <td><%=current_user.introduction %></td>
+  <th>introduction</th>
+  <td><%=user.introduction %></td>
   </tr>
 </table>
+<% if user==current_user %>
+ <%=link_to "edit",edit_user_path(user.id) %>
+<% end %>
 
-<%=link_to "edit",edit_user_path(current_user) %>
 
 <h1>New book</h1>
 <% if book.errors.any? %>

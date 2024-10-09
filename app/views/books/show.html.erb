@@ -1,3 +1,37 @@
+<h1>User info</h1>
+<%=image_tag @book.user.get_profile_image(200,200) %>
+<table>
+  <tr>
+    <th>name</th>
+    <td><%=@book.user.name %></td>
+  </tr>
+  <tr>
+  <th>introduction</th>
+  <td><%=@book.user.introduction %></td>
+  </tr>
+</table>
+<% if @book.user==current_user %>
+ <%=link_to "edit",edit_user_path(@book.user.id) %>
+<% end %>
+
+
+<h1>New book</h1>
+<% if @bookn.errors.any? %>
+<h2><%=@bookn.errors.count %>error prohibited this obj from being saved:</h2>
+<ul><% @bookn.errors.full_messages.each do |message| %>
+<li><%=message %></li>
+<% end %>
+</ul>
+<% end %>
+<%=form_with model:@bookn do |f|%>
+<h4>Title</h4>
+<%=f.text_field:title %>
+<h4>Body</h4>
+<%=f.text_area:body %>
+<p><%=f.submit "Create Book" %></p>
+<% end %>
+
+
 <h1>Book detail</h1>
 <table>
   <td><%=image_tag @book.user.get_profile_image(200,200) %></td>

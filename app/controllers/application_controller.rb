@@ -2,11 +2,13 @@ class ApplicationController < ActionController::Base
   before_action:configure_permitted_parameters,if: :devise_controller?
 
   def after_sign_up_path_for(resource)
-    user_path(user.id)
+    @user=current_user.id
+    user_path(@user)
   end
 
   def after_singn_out_path_for(resource)
-    user_path(user.id)
+    @user=curret_user.id
+    user_path(@user)
   end
 
   protected
