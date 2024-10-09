@@ -1,10 +1,17 @@
-<h1>User info</h1>
-<%=form_with model:@user,url:user_path(@user.id),method: :patch do |f| %>
-<h4>Name</h4>
-<%=f.text_field:name %>
-<h4>Image</h4>
-<%=f.file_field:profile_image %>
-<h4>Introduction</h4>
-<%=f.text_area:introduction %>
-<%=f.submit "Update User" %>
+<div class="container">
+  <div class="row">
+    <div class="col-4 mx-auto mt-2">
+<h1 class="text-start">User info</h1>
+<p class="text-start"><%=form_with model:@user,url:user_path(@user.id),method: :patch do |f| %></p>
+<h6 class="text-start">Name</h6>
+<p class="text-start"><%=f.text_field:name,class: "form-control" %></p>
+<h6 class="text-start">Image</h6>
+<p class="text-start"><%=f.file_field:profile_image %></p>
+<h6 class="text-start">Introduction</h6>
+<p class="text-start"><%=f.text_area:introduction,class: "form-control" %></p>
+<p p class="text-start"><%=f.submit "Update User",class: "btn btn-secondary" %></p>
 <% end %>
+
+</div>
+</div>
+</div>
