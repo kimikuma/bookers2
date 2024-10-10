@@ -11,10 +11,11 @@
 <% end %>
 <%=form_with model:@book,url:book_path(@book.id),method: :patch do |f|%>
 <h6>Title</h6>
-<%=f.text_field:title,class: "form-control mb-3" %>
+<p><%=f.text_field:title,class: "form-control mb-3" %></p>
 <h6>Opinion</h6>
-<%=f.text_area:body,class: "form-control" %>
-<%=f.submit 'Updete',class: "btn btn-success mt-2 mb-3" %>
+<p><%=f.text_area:body,class: "form-control" %></p>
+<p><%#<%=f.submit 'Updete Book',class: "btn btn-success" %>
+<<button type="submit",class="btn btn-success">Update Book</button></p>
 <% end %>
 <span class="border-right"><%=link_to 'Show',book_path(@book.id) %></span>
 <span class="ms-2"><%=link_to 'Back',books_path %></span>
